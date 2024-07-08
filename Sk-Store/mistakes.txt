@@ -1,0 +1,22 @@
+cart item product display
+
+
+const getTotalCartAmount = () => {
+  let totalAmount = 0;
+  
+  for (const item in cartItems) {
+    console.log("TOTAL CART AMOUNTS", item);
+    console.log("CART ITEMS NUMBER", cartItems[item]);
+
+    if (cartItems[item] > 0) {
+      let item_info = all_product.find((product) => {
+        return product.id === Number(item);
+      });
+
+      totalAmount += item_info.new_price * cartItems[item];
+    }
+  }
+
+  return totalAmount;
+};
+
